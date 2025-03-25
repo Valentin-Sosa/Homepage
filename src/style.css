@@ -4,7 +4,9 @@
 
 :root
 {
-    --alternative-color: #D4AF37;
+    --alternative-color: rgb(194, 0, 0);
+    --background: white;
+    --text: rgb(49,49,49);
 }
 
 *
@@ -16,8 +18,8 @@
 
 body
 {
-    background-color: black;
-    color: white;
+    background-color: var(--background);
+    color: black;
     font-family: 'Roboto', serif;
 }
 
@@ -59,17 +61,17 @@ header > section
     transform: skewY(-10deg);
     transform-origin: 0;
     z-index: -1;
-    box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.8);
 }
 
 .about-me
 {
     background-color: white;
-    color: rgb(49, 49, 49);
+    color: var(--text);
     padding: 30px 50px 40px 25px;
     max-width: 600px;
     transform: translateY(-40px);
-    box-shadow: 4px 6px 15px rgba(255, 255, 255, 0.3);
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.5);
 }
 
 .tony
@@ -77,13 +79,14 @@ header > section
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: white;
 }   
 
 .tony > img
 {
     height: 500px;
     width: auto;
-    box-shadow: 8px 7px 15px rgba(255, 255, 255, 0.2);
+    box-shadow: 6px 8px 15px rgba(0, 0, 0, 0.5);
 }
 
 #name
@@ -92,6 +95,7 @@ header > section
     font-size: 3.8rem;
     font-style:italic;
     transform: translateY(-50px);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 h2
@@ -105,6 +109,7 @@ main
     display: flex;
     align-items: center;
     justify-content: center;
+    color:var(--text);
 }
 
 
@@ -121,14 +126,16 @@ main
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: white
 }
 
 .family-member > img
 {
     width: 400px;
     height: 500px;
-    box-shadow: 2px 3px 15px rgba(255, 255, 255, 0.2),
-    -2px -3px 15px rgba(255, 255, 255, 0.2);
+    box-shadow: 4px 7px 15px rgba(0, 0, 0, 0.7),
+    -4px -7px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
 }
 
 .family-member > span
@@ -137,19 +144,22 @@ main
     font-size: 2rem;
     font-style:italic;
     transform: translateY(-60px);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 footer
 {
-    background: linear-gradient(to top, black,var(--alternative-color));
+    background: linear-gradient(to top, rgb(77, 0, 0),var(--alternative-color));
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 50px;
     gap: 100px;
+    color: white;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.4);
 }
 
-footer > section
+.contact
 {
     max-width: 600px;
     display: flex;
@@ -170,6 +180,7 @@ footer h2
 footer > img
 {
     max-width: 700px;
+    border-radius: 20px;
 }
 
 footer > section > div
@@ -183,4 +194,87 @@ footer > section >div > img
 {
     width: 25px;
     filter: invert();
+}
+
+
+@media (max-width: 599px)
+{
+    header > section
+    {
+        flex-direction: column;
+    }
+
+    .family-container
+    {
+        grid-template-columns: 1fr;
+    }
+
+    main h2
+    {
+        text-align: center;
+    }
+
+    .about-me
+    {
+        box-shadow: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        font-size: 1.8rem;
+    }
+
+    #diagonal
+    {
+        height: 25%;
+        transform: skewY(-30deg);
+
+    }
+    .tony > img
+    {
+        width: 350px;
+        height: auto;
+    }
+
+    .family-member > img
+    {
+        width: 80%;
+        height: 400px;
+    }
+
+    footer
+    {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .contact
+    {
+        font-size: 1.4rem;
+    }
+
+    .contact > h2
+    {
+        font-size: 3.8rem;
+        text-align: center;
+    }
+
+    footer > img 
+    {
+        width: 100%;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1024px) 
+{
+    .family-container
+    {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .family-member > img
+    {
+        width: 90%;
+        height: 400px;
+    }
 }
