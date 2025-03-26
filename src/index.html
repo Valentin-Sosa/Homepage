@@ -14,9 +14,9 @@
                 <span id="name">Tony Soprano</span>
             </section>
             <section class="about-me">
+                <div class="img-container"></div>
                 <h1>About me</h1>
                 <p>How you doin’? Name’s Tony Soprano. I’m a businessman—waste management, if you ask officially. Unofficially? Let’s just say I handle things. Problems, opportunities, negotiations… whatever needs to be done.
-    
                     I run a tight operation, keep things in line, and make sure my family—both kinds of family—are taken care of. Some people call it leadership, others call it something else, but at the end of the day, I get results.
                     
                     I enjoy a good cigar, a nice plate of gabagool, and the occasional therapy session (don’t spread that around). Life’s got its ups and downs, but in the end, you gotta do what you gotta do.
@@ -77,7 +77,12 @@
                 <span>tony.soprano@mobindustries.com</span>
             </div>
         </section>
-        <img src="images/tonyContact.jpg" alt="">
+        <picture>
+            <source srcset="images/tonyContact.jpg" media="(min-width: 1271px)">
+            <source srcset="images/tonyContactTablet.jpg" media="(min-width: 700px)">
+            <img src="images/tonyContact.jpg" alt="">
+        </picture>
+    
     </footer>
 </body>
 </html>
